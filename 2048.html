@@ -1,0 +1,91 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2048</title>
+	<link rel="stylesheet" type="text/css" href="2048.css">
+	<script src="2048.js"></script>
+</head>
+<body>
+	<!-- 顶部2048好看的亚子 -->
+	<div class="gametitle">
+		<h1>
+			<span class="num">2</span>
+			<span class="num">0</span>
+			<span class="num">4</span>
+			<span class="num">8</span>
+		</h1>
+	</div>
+	
+	<br />
+	<hr />
+	
+	<!-- 游戏规则框框 -->
+	<fieldset class="fieldsetstyle">
+		<legend align="center">游戏规则</legend>
+		<p class="gameorder" >
+			1.上下左右滑动，相同数字合并为更高级的数字<br />
+			2.滑动格子会在随机位置，出现随机的数字2或者4<br />
+			3.游戏胜利：出现2048<br />
+			4.游戏结束：游戏界面被数字填满不能再滑动<br />
+			5.游戏总分数：游戏过程中数字相加总和，分数更高<br />&nbsp;&nbsp;&nbsp;排名越高<br />	
+		</p>
+	</fieldset>
+	
+	<!-- 游戏整体框架 -->
+	<div class="container">
+		<!-- 开始键与分数盒 -->
+		<div class="head">
+			<!-- 记录分数和最高分数 -->
+			<div class="score-box">
+				<!-- 实时分数 -->
+				<div id="score1">
+					<p>SCORE:</p>
+					<p id="score">0</p>
+				</div>
+				<!-- 最大分数 -->
+				<div id="Max-score1">
+					<p>BEST:</p>
+					<p id="Maxscore">0</p>
+				</div>
+			</div>
+			<!-- 开始按钮 -->
+			<button onclick="game.start()" class="btn1"><a href="#">BEGIN</a></button>
+		</div>
+		
+		<!-- 游戏的4*4框架 -->
+		<div id="game">
+			<!-- 第一行 -->
+			<div id = "c00" class="cell"></div>
+			<div id = "c01" class="cell"></div>
+			<div id = "c02" class="cell"></div>
+			<div id = "c03" class="cell"></div>
+			<!-- 第二行 -->
+			<div id = "c10" class="cell"></div>
+			<div id = "c11" class="cell"></div>
+			<div id = "c12" class="cell"></div>
+			<div id = "c13" class="cell"></div>
+			<!-- 第三行 -->
+			<div id = "c20" class="cell"></div>
+			<div id = "c21" class="cell"></div>
+			<div id = "c22" class="cell"></div>
+			<div id = "c23" class="cell"></div>
+			<!-- 第四行 -->
+			<div id = "c30" class="cell"></div>
+			<div id = "c31" class="cell"></div>
+			<div id = "c32" class="cell"></div>
+			<div id = "c33" class="cell"></div>
+		</div>
+		
+		<!-- 游戏结束界面 -->
+		<div class="gameOver" id="gameOver">
+			<div>
+				<h1>GAME OVER!</h1>
+				<h2 id="lastscore">总分为: <span id="lastScore">0</span></h2>
+				<button onclick="game.start()" class="btn2"><a href="javascript:game.start()">NEW GAME</a>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

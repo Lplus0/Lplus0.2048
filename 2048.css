@@ -1,0 +1,191 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	margin: 80px;
+	color: #677277;
+	background-color: #fffae8;
+}
+.gametitle {
+    text-align: center;
+	color: #D1FCFA;
+	font-size: larger;
+}
+span.num {
+  background: #0091ff;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius:60px;
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
+  margin: 0 0.5rem;
+}
+span.num:nth-of-type(2) {
+  background: #ff8c00;
+}
+span.num:nth-of-type(3) {
+  background: #00d200;
+}
+span.num:nth-of-type(4) {
+  background: #7280ff;
+}
+.fieldsetstyle{
+	width:400px;
+	margin-left: auto;;
+	margin-right: auto;
+}
+p.gameorder{
+	padding-left: 5%;
+}
+/*2048的盒子*/
+
+.container{
+	width: 450px;
+	height: 695px;
+	margin: auto;
+	/*background-color: pink;*/
+}
+
+/*记录分数的盒子*/
+.score-box{
+	float: right;
+	position: absolute;
+	text-align: center;
+	right: 0px;
+	top: 60px;
+	font-size: 30px;
+}
+/*实时分数*/
+#score1{
+	margin-right: 172px;
+	width: 160px;
+	height: 80px;
+	background-color: #BBADA0;
+	border-radius: 6px;
+	font-weight: bold;
+}
+#Max-score1{
+	width: 160px;
+	height: 80px;
+	background-color: #BBADA0;
+	float: right;
+	margin-top: -80px;
+	border-radius: 6px;
+	font-weight: bold;
+	
+}
+#score{
+	color: #fff;
+	font-size: 30px;
+}
+#Maxscore{
+	color: #fff;
+	font-size: 30px;
+}
+/*开始按钮*/
+.btn1{
+	background-color:#bbada0; 
+	border-radius: 6px;
+	padding: 40px 6px;
+	cursor: pointer;
+	height: 40px;
+	line-height: 4px;
+	display: block;
+	text-align: center;
+	float: left;
+	border: 0px solid #8f7a66;
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: 2em;
+}
+/*定义开始按钮中的a属性*/
+.btn1>a{
+	text-decoration: none;
+	color: #f9f6f2;
+}
+.head{
+	position: relative;
+}
+/*设置游戏的盒子*/
+#game{
+	position: absolute;
+	width: 450px;
+	height: 450px;
+	margin-top:190px;
+	background-color: #bbada0;
+	border-radius: 6px;
+
+}
+/*设置游戏盒子的属性*/
+/*每一个盒子的属性*/
+.cell{
+	width: 100px;
+	height: 100px;
+	margin: 10px 0px 0px 10px;
+
+	float: left;
+	border-radius: 6px;
+	background: rgba(238,228,218,0.35);
+	font-size: 40px;
+	color: #fff;
+	text-align: center;
+	line-height:100px;
+	font-weight: bold;
+}
+.n2{background-color: #ee9bc1;}
+.n4{background-color: #8ae0ed;}
+.n8{background-color: #F2B179;}
+.n16{background-color: #e284f5;}
+.n32{background-color: #f6a55d;}
+.n64{background-color: #eded67;}
+.n128{background-color: #59ed72;}
+.n256{background-color:#ebed6d;}
+.n512{background-color:#9c0;}
+.n1024{background-color:#33b5e5;}
+.n2048{background-color:#09c;}
+.n4096{background-color:#a6c;}
+.n8192{background-color:#93c;}
+/*游戏结束界面*/
+.gameOver{
+	position: absolute;
+	top:740px;
+	bottom:0;
+	left: 0;
+	right: 0;
+	display: none;
+}
+.btn2{
+	background-color: #EEE4DA;
+	width:130px;
+	height: 40px;
+	text-align: center;
+	border:0px solid #fff;
+	border-radius: 6px;
+	margin-top: 30px;
+}
+.btn2>a{
+	font-size: 20px;
+	text-decoration: none;
+	color: gray;
+}
+.gameOver>div{
+	width: 300px;
+	height: 200px;
+	position: absolute;
+	left: 50%;
+	top:50%;
+	margin-top: -100px;
+	margin-left: -150px;
+	background-color: #fff;
+	border-radius: 10px;
+	border:5px solid #edcf72;
+	text-align: center;
+	font-size: 15px;
+	font-family: Arial;
+	font-weight: bold;
+}
+h1{
+	margin-top:30px;
+}
