@@ -1,3 +1,4 @@
+
 var game = {
 	data:[],
 	score:0,	
@@ -5,9 +6,14 @@ var game = {
 	state:1,
 	RUNNING:1,  
 	GAMEOVER:0,	 
+	times: 0,
 	
 	//判断游戏是否结束
 	gameover(){
+		
+		document.getElementById("time").innerHTML=this.times;
+		this.times+=0.5;
+		//全局变量和局部变量
 		for(var r = 0;r<4;r++){
 			for(var c = 0;c<4;c++){
 				if(this.data[r][c] == 0)
@@ -24,11 +30,16 @@ var game = {
 				}
 			}
 		}	
-		return true;
-	
+		return true;		
 	},
+	
+	//移动次数清零
+	timesclear(){
+		this.times=0;
+		},
 	//游戏开始
 	start(){
+		this.timesclear();
 		this.score=0;
  	    this.state=this.RUNNING;
 		/*this.data =[[0,7,0,0],
@@ -51,6 +62,7 @@ var game = {
 					game.moveLeft();
 				break;
 				case 39://右键对应右移
+
 					game.moveRight();
 				break;
 				case 40://下键对应下移
@@ -104,16 +116,41 @@ var game = {
 		while(true) {
 			var row = Math.floor(Math.random() * 4);
 			var col = Math.floor(Math.random() * 4);
-			if (this.data[row][col] == 0) {
-				var num = Math.random() > 0.5 ? 2 : 4;
-				//这个地方还可以加进改进，让概率0.5随游戏进行而变化
-				this.data[row][col] = num;
-				break;
+			
+			if (this.data[row][col] == 0){
+				if(this.times<50){
+					var num = Math.random() > 0.5 ? 2 : 4;				
+					this.data[row][col] = num;
+					break;
+				}
+			//进阶版：让概率0.5随游戏进行而变化
+				else if(this.times>49&&this.times<100){
+					var num = Math.random() > 0.6 ? 2 : 4;
+					this.data[row][col] = num;
+					break;
+				}
+				else if(this.times>99&&this.times<150){
+					var num = Math.random() > 0.7 ? 2 : 4;
+					this.data[row][col] = num;
+					break;
+				}else if(this.times>149&&this.times<200){
+					var num = Math.random() > 0.8 ? 2 : 4;
+					this.data[row][col] = num;
+					break;
+				}else if(this.times>199){
+					var num = Math.random() > 0.9 ? 2 : 4;
+					this.data[row][col] = num;
+					break;
+				}
+				
+				
+				
 			}
 		}		
 	},
 	
 	//开始移动！
+	
 	//向左移动
 	moveLeftInRow(r){
 			for(var c = 0;c<3;c++){
